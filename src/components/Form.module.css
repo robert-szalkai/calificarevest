@@ -23,7 +23,7 @@
 }
 
 .form.sending::before {
-  background: white;
+  background: #cecece;
   border-radius: 0.25rem;
   content: "";
   height: 100%;
@@ -145,17 +145,6 @@
   position: absolute;
   left: calc(50% - 3rem);
   top: calc(50% - 3rem);
-}
-
-@keyframes loading {
-  from {
-    opacity: 1;
-    transform: scale(0.001);
-  }
-  from {
-    opacity: 0;
-    transform: scale(1);
-  }
 }
 
 .button.centered {
