@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600&display=swap');
+
+body {
+  font-family: "Merriweather", sans-serif;
+}
+
+h1,
+.h1 {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 75px;
+}
+
+h2,
+.h2 {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 500;
+  font-size: 54px;
+  line-height: 68px;
+}
+
+h3,
+.h3 {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 41px;
+}
+
+h4,
+.h4 {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+p,
+.p {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.caption {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.small {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.x-small {
+  font-size: 12px;
+  line-height: 19px;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.semibold {
+  font-weight: 500 !important;
+}
+
+.normal-weight {
+  font-weight: 400 !important;
+}
+
+.light-weight {
+  font-weight: 300 !important;
+}
+
+.merriweather {
+  font-family: "Merriweather", serif !important;
+}
+
+@media (max-width: 1024px) {
+  h1,
+  .h1 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 44px;
+    line-height: 55px;
+  }
+}
