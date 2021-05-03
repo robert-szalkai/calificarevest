@@ -1,13 +1,38 @@
+import { Link } from 'gatsby'
 import React from 'react'
+
+import * as styles from './Navbar.module.css';
+import CloseIcon from '../../assets/img/close-icon-black.svg';
 
 const Navbar = () => {
     return (
-        <header className="full-width-layout my-3">
-            <nav className="center-layout flex flex-between">
-                <a className="h1" href="/">Cursuri Calificare Vest</a>
-                <div>
-                    <a href="/">Acasa</a>
-                    <a href="/cursuri">Cursuri</a>
+        <header className="full-width-layout my-5">
+            <nav className="center-layout flex justify-between">
+                <a className="h3" href="/">Cursuri Calificare Vest</a>
+                <div className={`flex items-center gap-x-20 ${styles.desktopLinks}`}>
+                    <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
+                    <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>
+                    <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link>
+                    <Link className={styles.link} activeClassName={styles.active} to="/contact">Contact</Link>
+                </div>
+
+                <div className={styles.navbarMobileMenu}>
+                    <input className={`hidden ${styles.navbarMobileToggle}`} type="checkbox" id="navbar-mobile-toggle" />
+                    <label htmlFor="navbar-mobile-toggle" className={styles.navbarMobileButton}>
+                        <span className={styles.navbarMobileLine}></span>
+                    </label>
+                    <div className={styles.navbarMobileList}>
+                        <div className="flex justify-between items-center mb-6">
+                            <p className="h3">Meniu</p>
+                            <label htmlFor="navbar-mobile-toggle" className={styles.navbarMobileButton}>
+                                <img src={CloseIcon} />
+                            </label>
+                        </div>
+                        <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
+                        <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>
+                        <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link>
+                        <Link className={styles.link} activeClassName={styles.active} to="/contact">Contact</Link>
+                    </div>
                 </div>
             </nav>
         </header>

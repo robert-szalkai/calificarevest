@@ -82,6 +82,8 @@ const Form = () => {
 
     return (
         <>
+            <h1>Send a message</h1>
+
             {state.status === "ERROR" && (
                 <p className={styles.error}>Something went wrong! Please try again</p>
             )}
