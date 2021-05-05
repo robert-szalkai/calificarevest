@@ -1,6 +1,6 @@
 import React from 'react'
-import Form from '../components/form'
-import Hero from '../components/hero/hero'
+import Form from '../components/Form'
+import Hero from '../components/hero/Hero'
 import Layout from '../components/layout/Layout'
 
 
