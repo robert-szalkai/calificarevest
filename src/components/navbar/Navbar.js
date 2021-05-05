@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <header className="full-width-layout my-5">
             <nav className="center-layout flex justify-between">
-                <a className="h3" href="/">Cursuri Calificare Vest</a>
+                <a className="h3" href="/">Calificari Vest</a>
                 <div className={`flex items-center gap-x-20 ${styles.desktopLinks}`}>
                     <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
                     <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
                         <div className="flex justify-between items-center mb-6">
                             <p className="h3">Meniu</p>
                             <label htmlFor="navbar-mobile-toggle" className={styles.navbarMobileButton}>
-                                <img src={CloseIcon} />
+                                <img src={CloseIcon} alt="close"/>
                             </label>
                         </div>
                         <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
