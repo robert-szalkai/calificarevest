@@ -11,14 +11,17 @@ module.exports = {
           100: 'var(--gray-100)'
         },
         blue: {
-          100: 'var(--yellow-100)',
-          200: 'var(--yellow-200)',
-          300: 'var(--yellow-300)',
-          400: 'var(--yellow-400)'
+          100: 'var(--blue-100)',
+          200: 'var(--blue-200)',
+          300: 'var(--blue-300)',
+          400: 'var(--blue-400)'
         },
         yellow: {
           100: 'var(--yellow-100)',
           200: 'var(--yellow-200)'
+        },
+        green: {
+          100: 'var(--green-100)'
         }
       }
     },
