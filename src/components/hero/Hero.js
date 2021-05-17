@@ -16,9 +16,12 @@ const Hero = () => {
                     inalta calitate
                 </p>
                 <p className="uppercase mb-5"> Toate pe teritoriul Romaniei</p>
-                <button className="btn btn-green btn-big">Vezi cursurile</button>
+                <button className="btn btn-primary btn-big">Vezi cursurile</button>
             </div>
-            <img src={'hero.svg'} alt="teacher"/>
+            <div className="grid">
+                <div className={styles.imageShadow}></div>
+                <img className="col-start-1 col-end-2 row-start-1 row-end-2" src={'harta.svg'} alt="teacher"/>
+            </div>
         </div>
     )
 }

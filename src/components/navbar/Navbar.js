@@ -6,7 +6,7 @@ import CloseIcon from '../../assets/img/close-icon-black.svg';
 
 const Navbar = () => {
     return (
-        <header className="full-width-layout my-5">
+        <header className="full-width-layout py-5">
             <nav className="center-layout flex justify-between">
                 <a className="h3" href="/">Calificari Vest</a>
                 <div className={`flex items-center gap-x-20 ${styles.desktopLinks}`}>

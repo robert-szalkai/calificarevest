@@ -1,0 +1,44 @@
+/*Buttons*/
+
+.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.54px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    transition: all .3s ease-in;
+}
+
+.btn-primary {
+    color: var(--white);
+    background-color: var(--yellow-100);
+}
+
+.btn-primary:hover {
+    background-color: var(--yellow-200);
+}
+
+.btn-ghost {
+    color: var(--green-light);
+    border: 2px solid rgba(var(--rgb-green-light), .12);
+}
+
+.btn-ghost:hover {
+    color: var(--white);
+    background-color: rgba(var(--rgb-green-light), 1);
+}
+
+.btn-big {
+    padding: 16px 48px;
+}
+
+.btn-small {
+    padding: 10px 20px;
+}
+
+.btn-xs {
+    padding: 5px 10px;
+}
+
+/*Buttons-END*/

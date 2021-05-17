@@ -7,6 +7,7 @@ import Layout from '../components/layout/Layout'
 import '../global.css'
 import '../styles/layout.css'
 import '../styles/typography.css'
+import '../styles/buttons.css'
 
 const Index = () => {
     return (

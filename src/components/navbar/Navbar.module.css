@@ -1,3 +1,7 @@
+header {
+  box-shadow: 0px 10px 6px var(--gray-100);
+}
+
 .link {
   opacity: 0.5;
   transition: all 0.3s ease;
