@@ -4,4 +4,7 @@
     right: 0;
     width: 100%;
     top: 350px;
+
+    min-height: 1480px;
+    object-fit: cover;
 }
