@@ -10,12 +10,16 @@ import '../styles/typography.css'
 import '../styles/buttons.css'
 import Autorizari from '../components/autorizari/Autorizari'
 import Performanta from '../components/performanta/Performanta'
+import Cursuri from '../components/cursuri/Cursuri'
 
 const Index = () => {
     return (
         <Layout>
             <section className="center-layout mt-16 md:mt-32 mb-16 md:mb-32">
                 <Hero />
+            </section>
+            <section className="center-layout mb-16 md:mb-32 overflow-hidden">
+                <Cursuri />
             </section>
             <section className="center-layout mb-16 md:mb-32">
                 <Performanta />
