@@ -8,3 +8,20 @@
     min-height: 1480px;
     object-fit: cover;
 }
+@media (max-width: 1024px) {
+    .background-image {
+        top: 300px;
+    }
+}
+
+@media (max-width: 920px) {
+    .background-image {
+        top: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    .background-image {
+        top: 50%;
+    }
+}
