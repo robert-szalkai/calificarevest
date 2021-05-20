@@ -30,7 +30,7 @@
 
 @media (max-width: 767px) {
     .container > .image-wrapper {
-        width: 90%;
+        width: calc(100% - 20px);
     }
 }
 

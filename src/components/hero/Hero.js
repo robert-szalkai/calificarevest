@@ -5,8 +5,8 @@ import * as styles from './Hero.module.css';
 const Hero = () => {
     return (
         <div className={styles.container}>
-            <div className="text-center md:text-left grid justify-center content-center">
-                <h2 className="mb-6">
+            <div className="grid justify-center content-center">
+                <h2 className="mb-6 text-center md:text-left">
                     Cursuri <br/> 
                     de calificare
                 </h2>
