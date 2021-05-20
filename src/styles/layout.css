@@ -22,7 +22,11 @@ body {
     align-content: start;
 }
 
-.body-container > *:not(img) {
+.body-container > header {
+    z-index: 2;
+}
+
+.body-container > main {
     z-index: 1;
 }
 
