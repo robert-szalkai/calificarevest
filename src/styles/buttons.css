@@ -51,4 +51,10 @@
     padding: 5px 10px;
 }
 
+@media (max-width: 500px) {
+    .btn-big {
+        padding: 16px 24px;
+    }
+}
+
 /*Buttons-END*/
