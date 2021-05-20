@@ -8,3 +8,9 @@
     border: 10px solid var(--blue-200);
     border-radius: 10px;
 }
+
+@media (max-width: 500px) {
+    .wrapper {
+        padding: 16px;
+    }
+}

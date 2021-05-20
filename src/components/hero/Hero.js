@@ -6,16 +6,16 @@ const Hero = () => {
     return (
         <div className={styles.container}>
             <div className="grid justify-center content-center">
-                <h2 className="mb-6 text-center md:text-left">
+                <h2 className="mb-6 text-blue-400 text-center md:text-left">
                     Cursuri <br/> 
                     de calificare
                 </h2>
-                <p className="mb-3">
+                <p className="mb-3 text-blue-300">
                     Construieste-ti cariera dorita, pas cu pas,<br/> 
                     cu ajutorul servicilor noastre de cea mai <br/> 
                     inalta calitate
                 </p>
-                <p className="uppercase mb-5"> Toate pe teritoriul Romaniei</p>
+                <p className="uppercase text-blue-300 mb-5"> Toate pe teritoriul Romaniei</p>
                 <button className="btn btn-primary btn-big">Vezi cursurile</button>
             </div>
             <div className={["grid", styles.imageWrapper].join(' ')}>

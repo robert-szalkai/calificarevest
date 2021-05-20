@@ -1,6 +1,7 @@
 /*Buttons*/
 
 .btn {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.54px;
@@ -17,6 +18,15 @@
 
 .btn-primary:hover {
     background-color: var(--yellow-200);
+}
+
+.btn-secondary {
+    color: var(--white);
+    background-color: var(--blue-400);
+}
+
+.btn-secondary:hover {
+    background-color: var(--blue-300);
 }
 
 .btn-ghost {

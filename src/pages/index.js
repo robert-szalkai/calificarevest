@@ -15,7 +15,7 @@ import Cursuri from '../components/cursuri/Cursuri'
 const Index = () => {
     return (
         <Layout>
-            <section className="center-layout mt-4 md:mt-32 mb-20 md:mb-32">
+            <section className="center-layout mt-10 md:mt-20 xl:mt-32 mb-20 md:mb-32">
                 <Hero />
             </section>
             <section className="center-layout mb-10 md:mb-32 overflow-hidden">
