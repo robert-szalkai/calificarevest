@@ -44,6 +44,10 @@ body {
   grid-column: 1/-1;
 }
 
+.bg-light-blue-custom {
+  background-color: rgba(var(--rgb-blue-200), 0.1);
+}
+
 @media (max-width: 1024px) {
   .body-container,
   .body-container > header,

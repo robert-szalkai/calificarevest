@@ -5,12 +5,13 @@ import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper-bundle.min.css';
-import LISTA_CURSURI from '../../enums/ListaCursuri';
+import Enums from '../../enums/Enums';
 import * as styles from './Cursuri.module.css'
 
 SwiperCore.use([Navigation]);
 
 const Cursuri = () => {
+    const { LISTA_CURSURI } = Enums;
     return (
         <>
             <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Cursurile noastre</p>
@@ -20,7 +21,6 @@ const Cursuri = () => {
                 slidesPerView={10}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
-                centeredSlides={true}
                 breakpoints={{
                     320: {
                         slidesPerView: 1.3,
@@ -28,7 +28,8 @@ const Cursuri = () => {
                     },
                     767: {
                         slidesPerView: 2,
-                        spaceBetween: 30
+                        spaceBetween: 30,
+                        centeredSlides: true
                     },
                     1300: {
                         slidesPerView: 3,

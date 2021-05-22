@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react'
+import Enums from '../enums/Enums';
 import * as styles from './Form.module.css';
 
 const INITIAL_STATE = {
@@ -31,6 +32,8 @@ const reducer = (state, action) => {
 
 const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+
+    const { ORASE, LISTA_CURSURI } = Enums;
 
     const setStatus = status => dispatch({
         type: 'updateStatus',
@@ -82,35 +85,43 @@ const Form = () => {
 
     return (
         <>
-            <h1>Send a message</h1>
+            <h3 className="uppercase text-blue-400 text-center mb-12 md:mb-24">Inscrie-te la un curs</h3>
 
             {state.status === "ERROR" && (
                 <p className={styles.error}>Something went wrong! Please try again</p>
             )}
             <form className={`${styles.form} ${state.status === "PENDING" && styles.pending}`} onSubmit={handleSubmit}>
-                <label className={styles.label}>
-                    Name
-                <input className={styles.input} type="text" name="name" value={state.name} onChange={updateFieldValue('name')} />
-                </label>
+                <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16 md:mb-32">
+                    <select className="select">
+                        {ORASE.length > 0 && ORASE.map((item, index) => {
+                            return <option key={item.cityId} value={item.cityId}>{item.name}</option>
+                        })}
+                    </select>
+                    <select className="select">
+                        {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
+                            return <option key={item.id} value={item.id}>{item.name}</option>
+                        })}
+                    </select>
+                </div>
+                <div className="bg-white p-8 md:p-16 mb-12 md:mb-24">
+                    <p className="mb-5">Tipul : Specializare</p>
+                    <p className="mb-10">Durata cursului: 6 saptamani</p>
+                    <p className="text-blue-400">Pretul cursului este de 950 lei si se poate plati in 3 rate</p>
+                </div>
 
-                <label className={styles.label}>
-                    Email
-                <input className={styles.input} type="email" name="email" value={state.email} onChange={updateFieldValue('email')} />
-                </label>
+                <div className="grid md:justify-center mb-12 md:mb-24 gap-6 md:gap-12">
 
-                <label className={styles.label}>
-                    Subject
-                <input className={styles.input} type="text" name="subject" value={state.subject} onChange={updateFieldValue('subject')} />
-                </label>
+                    <input className="input" type="text" name="name" placeholder="Nume si prenume" value={state.name} onChange={updateFieldValue('name')} />
 
-                <label className={styles.label}>
-                    Body
-                <textarea className={styles.input} name="body" value={state.body} onChange={updateFieldValue('body')} />
-                </label>
+                    <input className="input" type="email" name="email" placeholder="Email" value={state.email} onChange={updateFieldValue('email')} />
 
-                <button className={styles.button}>
-                    SEND
-            </button>
+                    <input className="input" type="text" name="subject" placeholder="Subiect" value={state.subject} onChange={updateFieldValue('subject')} />
+
+                    <textarea className="input" name="body" placeholder="Body" value={state.body} onChange={updateFieldValue('body')} />
+
+                </div>
+
+                <button className="btn btn-primary btn-big md:justify-self-center">Inscrie-te</button>
 
             </form>
         </>

@@ -8,6 +8,7 @@ import '../global.css'
 import '../styles/layout.css'
 import '../styles/typography.css'
 import '../styles/buttons.css'
+import '../styles/form-components.css'
 import Autorizari from '../components/autorizari/Autorizari'
 import Performanta from '../components/performanta/Performanta'
 import Cursuri from '../components/cursuri/Cursuri'
@@ -27,8 +28,10 @@ const Index = () => {
             <section className="center-layout mb-24 md:mb-32">
                 <Autorizari />
             </section>
-            <section className="center-layout mb-24 md:mb-32">
-                <Form />
+            <section className="main-layout full-width-layout mb-24 md:mb-32 bg-light-blue-custom">
+                <div className="center-layout py-20 md:py-40">
+                    <Form />
+                </div>
             </section>
         </Layout>
     )
