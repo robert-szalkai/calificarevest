@@ -28,7 +28,7 @@ const Index = () => {
             <section className="center-layout mb-24 md:mb-32">
                 <Autorizari />
             </section>
-            <section className="main-layout full-width-layout mb-24 md:mb-32 bg-light-blue-custom">
+            <section className="main-layout full-width-layout bg-light-blue-custom">
                 <div className="center-layout py-20 md:py-40">
                     <Form />
                 </div>

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import Enums from '../enums/Enums';
 import * as styles from './Form.module.css';
 
@@ -32,8 +32,11 @@ const reducer = (state, action) => {
 
 const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+    const { ORASE, LISTA_CURSURI, DATA } = Enums;
 
-    const { ORASE, LISTA_CURSURI } = Enums;
+    const [selectedCourse, setSelectedCourse] = useState(LISTA_CURSURI[0].id);
+    const [selectedCity, setSelectedCity] = useState(ORASE[0].cityId);
+    const [selectedDate, setSelectedDate] = useState(DATA[0].id);
 
     const setStatus = status => dispatch({
         type: 'updateStatus',
@@ -83,6 +86,18 @@ const Form = () => {
         )
     }
 
+    const onChangeCourse = (evt) => {
+        setSelectedCourse(evt.target.value);
+    }
+
+    const onChangeCity = (evt) => {
+        setSelectedCity(evt.target.value);
+    }
+
+    const onChangeDate = (evt) => {
+        setSelectedDate(evt.target.value);
+    }
+
     return (
         <>
             <h3 className="uppercase text-blue-400 text-center mb-12 md:mb-24">Inscrie-te la un curs</h3>
@@ -92,14 +107,19 @@ const Form = () => {
             )}
             <form className={`${styles.form} ${state.status === "PENDING" && styles.pending}`} onSubmit={handleSubmit}>
                 <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16 md:mb-32">
-                    <select className="select">
+                    <select onChange={(evt) => onChangeCourse(evt)} value={selectedCourse} className="select">
+                        {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
+                            return <option key={item.id} value={item.id}>{item.name}</option>
+                        })}
+                    </select>
+                    <select onChange={(evt) => onChangeCity(evt)} value={selectedCity} className="select">
                         {ORASE.length > 0 && ORASE.map((item, index) => {
                             return <option key={item.cityId} value={item.cityId}>{item.name}</option>
                         })}
                     </select>
-                    <select className="select">
-                        {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
-                            return <option key={item.id} value={item.id}>{item.name}</option>
+                    <select onChange={(evt) => onChangeDate(evt)} value={selectedDate} className="select">
+                        {DATA.length > 0 && DATA.map((item, index) => {
+                            return <option key={index} value={item.id}>{item.name}</option>
                         })}
                     </select>
                 </div>

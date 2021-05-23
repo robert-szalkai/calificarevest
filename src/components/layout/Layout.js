@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
             <div className="body-container">
                 <Navbar />
                 <main className="full-width-layout">{children}</main>
-                <img className={styles.backgroundImage} src={'fundal.svg'} alt="fundal"/>
+                <img className={styles.backgroundImage} src={'fundalx1400.svg'} alt="fundal"/>
             </div>
         </>
     )

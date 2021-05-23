@@ -16,6 +16,17 @@ let Enums = {
         cityId: 4
     }
     ],
+    DATA: [{
+        name: "23 mai 2021",
+        id: 1
+    }, {
+        name: "25 mai 2021",
+        id: 2
+    }, {
+        name: "1 iunie 2021",
+        id: 3
+    }
+    ],
     LISTA_CURSURI: [{
         id: 1,
         name: "Curs Stivuitorist",
@@ -48,7 +59,7 @@ let Enums = {
     },
     {
         id: 6,
-        name: "Curs stivuitorist",
+        name: "Curs manichiura",
         image: "stivuitorist.svg",
         date: "20 septembrie"
     },
