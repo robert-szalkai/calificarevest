@@ -32,11 +32,10 @@ const reducer = (state, action) => {
 
 const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-    const { ORASE, LISTA_CURSURI, DATA } = Enums;
+    const { ORASE, LISTA_CURSURI } = Enums;
 
-    const [selectedCourse, setSelectedCourse] = useState(LISTA_CURSURI[0].id);
-    const [selectedCity, setSelectedCity] = useState(ORASE[0].cityId);
-    const [selectedDate, setSelectedDate] = useState(DATA[0].id);
+    const [selectedCourse, setSelectedCourse] = useState("");
+    const [selectedCity, setSelectedCity] = useState("");
 
     const setStatus = status => dispatch({
         type: 'updateStatus',
@@ -94,10 +93,6 @@ const Form = () => {
         setSelectedCity(evt.target.value);
     }
 
-    const onChangeDate = (evt) => {
-        setSelectedDate(evt.target.value);
-    }
-
     return (
         <>
             <h3 className="uppercase text-blue-400 text-center mb-12 md:mb-24">Inscrie-te la un curs</h3>
@@ -108,18 +103,15 @@ const Form = () => {
             <form className={`${styles.form} ${state.status === "PENDING" && styles.pending}`} onSubmit={handleSubmit}>
                 <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16 md:mb-32">
                     <select onChange={(evt) => onChangeCourse(evt)} value={selectedCourse} className="select">
+                        <option value="" disabled hidden>Alege cursul</option>
                         {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
                             return <option key={item.id} value={item.id}>{item.name}</option>
                         })}
                     </select>
                     <select onChange={(evt) => onChangeCity(evt)} value={selectedCity} className="select">
+                        <option value="" disabled hidden>Alege locatia</option>
                         {ORASE.length > 0 && ORASE.map((item, index) => {
                             return <option key={item.cityId} value={item.cityId}>{item.name}</option>
-                        })}
-                    </select>
-                    <select onChange={(evt) => onChangeDate(evt)} value={selectedDate} className="select">
-                        {DATA.length > 0 && DATA.map((item, index) => {
-                            return <option key={index} value={item.id}>{item.name}</option>
                         })}
                     </select>
                 </div>
