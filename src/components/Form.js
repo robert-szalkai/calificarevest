@@ -1,4 +1,5 @@
-import React, { useReducer, useState } from 'react'
+import React, { useContext, useReducer, useState } from 'react'
+import { AppContext } from '../context/app-context';
 import Enums from '../enums/Enums';
 import * as styles from './Form.module.css';
 
@@ -34,7 +35,7 @@ const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     const { ORASE, LISTA_CURSURI } = Enums;
 
-    const [selectedCourse, setSelectedCourse] = useState("");
+    const { selectedCourse, setSelectedCourse } = useContext(AppContext);
     const [selectedCity, setSelectedCity] = useState("");
 
     const setStatus = status => dispatch({
@@ -101,7 +102,7 @@ const Form = () => {
                 <p className={styles.error}>Something went wrong! Please try again</p>
             )}
             <form className={`${styles.form} ${state.status === "PENDING" && styles.pending}`} onSubmit={handleSubmit}>
-                <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16 md:mb-32">
+                <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16">
                     <select onChange={(evt) => onChangeCourse(evt)} value={selectedCourse} className="select">
                         <option value="" disabled hidden>Alege cursul</option>
                         {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
@@ -115,11 +116,13 @@ const Form = () => {
                         })}
                     </select>
                 </div>
-                <div className="bg-white p-8 md:p-16 mb-12 md:mb-24">
-                    <p className="mb-5">Tipul : Specializare</p>
-                    <p className="mb-10">Durata cursului: 6 saptamani</p>
-                    <p className="text-blue-400">Pretul cursului este de 950 lei si se poate plati in 3 rate</p>
-                </div>
+                {selectedCourse &&
+                    <div className="bg-white p-8 md:p-16 mb-12 md:mb-24">
+                        <p className="mb-5">Tipul : Specializare</p>
+                        <p className="mb-10">Durata cursului: 6 saptamani</p>
+                        <p className="text-blue-400">Pretul cursului este de 950 lei si se poate plati in 3 rate</p>
+                    </div>
+                }
 
                 <div className="grid md:justify-center mb-12 md:mb-24 gap-6 md:gap-12">
 

@@ -1,15 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,600&family=Open+Sans:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,600&family=Open+Sans:wght@400;600&display=swap");
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1,
 .h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 60px;
   line-height: 75px;
@@ -17,7 +17,7 @@ h1,
 
 h2,
 .h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 45px;
   line-height: 55px;
@@ -25,7 +25,7 @@ h2,
 
 h3,
 .h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 41px;
@@ -33,7 +33,7 @@ h3,
 
 h4,
 .h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
@@ -41,14 +41,14 @@ h4,
 
 p,
 .p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
 }
 
 .caption {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
@@ -69,6 +69,10 @@ p,
 }
 
 .semibold {
+  font-weight: 600 !important;
+}
+
+.medium {
   font-weight: 500 !important;
 }
 
@@ -81,11 +85,11 @@ p,
 }
 
 .montserrat {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .open-sans {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 @media (max-width: 1024px) {

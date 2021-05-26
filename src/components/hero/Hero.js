@@ -16,7 +16,7 @@ const Hero = () => {
                     inalta calitate
                 </p>
                 <p className="uppercase text-blue-300 mb-5"> Toate pe teritoriul Romaniei</p>
-                <a href="#cursuri" className="btn btn-primary btn-big">Vezi cursurile</a>
+                <a href="#cursuri" className="btn btn-primary btn-small justify-self-start">Vezi cursurile</a>
             </div>
             <div className={["grid", styles.imageWrapper].join(' ')}>
                 <div className={styles.imageShadow}></div>

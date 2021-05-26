@@ -13,7 +13,7 @@
     grid-column: 1/2;
     grid-row: 1/2;
     background: var(--white);
-    border-radius: 33px;
+    border-radius: 31px;
 }
 
 @media (max-width: 1270px) {

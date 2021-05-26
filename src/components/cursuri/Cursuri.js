@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import SwiperCore, { Navigation } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper-bundle.min.css';
+import { AppContext } from '../../context/app-context';
 import Enums from '../../enums/Enums';
 import * as styles from './Cursuri.module.css'
 
 SwiperCore.use([Navigation]);
 
+const wait = (ms = 500) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, ms);
+    })
+}
+
 const Cursuri = () => {
     const { LISTA_CURSURI } = Enums;
+    const { setSelectedCourse } = useContext(AppContext);
+
+    const onClickHandler = async (course) => {
+        setSelectedCourse(course.id);
+    }
     return (
         <>
             <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Cursurile noastre</p>
@@ -41,10 +55,9 @@ const Cursuri = () => {
                     LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slideWrap}>
                             <div className={styles.slide}>
-                                <p className="h3 text-yellow-100 whitespace-nowrap">{item.date}</p>
                                 <img src={item.image} alt="stivuitorist" />
-                                <p className="h4 text-blue-300">{item.name}</p>
-                                <button className="btn btn-secondary btn-big">Inscrie-te</button>
+                                <p className={styles.title}>{item.name}</p>
+                                <a href="#formular" onClick={() => onClickHandler(item)} className="btn btn-secondary btn-small justify-self-center">Inscrie-te</a>
                             </div>
                         </SwiperSlide>
                     })
