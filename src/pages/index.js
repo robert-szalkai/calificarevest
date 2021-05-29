@@ -17,7 +17,7 @@ import AppContextProvider from '../context/app-context'
 const Index = () => {
     return (
         <AppContextProvider>
-            <Layout>
+            <Layout showBackground={true}>
                 <section className="center-layout mt-10 md:mt-20 xl:mt-32 mb-24 md:mb-32">
                     <Hero />
                 </section>

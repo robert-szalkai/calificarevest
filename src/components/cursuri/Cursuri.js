@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { useContext } from 'react'
 
 import SwiperCore, { Navigation } from 'swiper';
@@ -10,14 +11,6 @@ import Enums from '../../enums/Enums';
 import * as styles from './Cursuri.module.css'
 
 SwiperCore.use([Navigation]);
-
-const wait = (ms = 500) => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, ms);
-    })
-}
 
 const Cursuri = () => {
     const { LISTA_CURSURI } = Enums;
@@ -55,9 +48,10 @@ const Cursuri = () => {
                     LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slideWrap}>
                             <div className={styles.slide}>
-                                <img src={item.image} alt="stivuitorist" />
+                                <img src={`/${item.image}`} alt="stivuitorist" />
                                 <p className={styles.title}>{item.name}</p>
-                                <a href="#formular" onClick={() => onClickHandler(item)} className="btn btn-secondary btn-small justify-self-center">Inscrie-te</a>
+                                <Link className="btn btn-secondary btn-small mb-2" onClick={() => onClickHandler(item)} to={`/#formular`}>Inscrie-te</Link>
+                                <Link className="btn btn-primary btn-small" to={`/cursuri/${item.name}`}>Detalii</Link>
                             </div>
                         </SwiperSlide>
                     })
