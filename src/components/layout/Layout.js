@@ -5,7 +5,7 @@ import useSiteMetadata from '../../hooks/use-sitemetadata';
 
 import * as styles from './Layout.module.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showBackground }) => {
     const { title, description } = useSiteMetadata();
     return (
         <>
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
             <div className="body-container">
                 <Navbar />
                 <main className="full-width-layout">{children}</main>
-                <img className={styles.backgroundImage} src={'fundalx1400.svg'} alt="fundal"/>
+                {showBackground && <img className={styles.backgroundImage} src={'/fundalx1400.svg'} alt="fundal" />}
             </div>
         </>
     )

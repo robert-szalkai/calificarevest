@@ -10,7 +10,7 @@
     text-align: center;
 
     display: grid;
-    grid-template-rows: min-content 100px repeat(2, min-content);
+    grid-template-rows: min-content 100px repeat(3, min-content);
 }
 
 .title {
