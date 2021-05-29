@@ -38,7 +38,8 @@ const Cursuri = () => {
                 breakpoints={{
                     320: {
                         slidesPerView: 1.3,
-                        spaceBetween: 20
+                        spaceBetween: 20,
+                        centeredSlides: true
                     },
                     767: {
                         slidesPerView: 2,
