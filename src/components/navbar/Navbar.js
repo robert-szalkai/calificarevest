@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className={`flex items-center gap-x-20 ${styles.desktopLinks}`}>
                     <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
                     <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>
-                    <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link>
+                    {/* <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link> */}
                     <Link className={styles.link} activeClassName={styles.active} to="/contact">Contact</Link>
                 </div>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
                         </div>
                         <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
                         <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>
-                        <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link>
+                        {/* <Link className={styles.link} activeClassName={styles.active} to="/despre-noi">Despre noi</Link> */}
                         <Link className={styles.link} activeClassName={styles.active} to="/contact">Contact</Link>
                     </div>
                 </div>
