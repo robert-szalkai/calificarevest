@@ -22,7 +22,8 @@ module.exports = {
         },
         green: {
           100: 'var(--green-100)'
-        }
+        },
+        red: 'var(--red)'
       }
     },
   },

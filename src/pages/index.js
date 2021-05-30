@@ -1,5 +1,4 @@
 import React from 'react'
-import Form from '../components/Form'
 import Hero from '../components/hero/Hero'
 import Layout from '../components/layout/Layout'
 
@@ -13,6 +12,7 @@ import Autorizari from '../components/autorizari/Autorizari'
 import Performanta from '../components/performanta/Performanta'
 import Cursuri from '../components/cursuri/Cursuri'
 import AppContextProvider from '../context/app-context'
+import Formular from '../components/formular/Formular'
 
 const Index = () => {
     return (
@@ -32,7 +32,7 @@ const Index = () => {
                 </section>
                 <section id="formular" className="main-layout full-width-layout bg-light-blue-custom">
                     <div className="center-layout py-20 md:py-40">
-                        <Form />
+                        <Formular />
                     </div>
                 </section>
             </Layout>
