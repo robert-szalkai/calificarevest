@@ -4,7 +4,8 @@ import * as Yup from 'yup';
 import Enums from '../../enums/Enums';
 
 const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Campul este obligatoriu'),
+    firstName: Yup.string().required('Campul este obligatoriu'),
+    lastName: Yup.string().required('Campul este obligatoriu'),
     email: Yup.string().email('Adresa de mail este invalida'),
     phone: Yup.number().required('Numarul de telefon este obligatoriu'),
     course: Yup.string().required('Selecteaza un curs'),
@@ -12,7 +13,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const initialValues = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     course: '',
@@ -26,10 +28,26 @@ const Formular = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
+                let coursePretty = LISTA_CURSURI.find(curs => curs.id === +values.course).name;
+                let locationPretty = ORASE.find(oras => oras.cityId === +values.location).name;
+                let message = {
+                    firstName: values.firstName,
+                    lastName: values.lastName,
+                    email: values.email,
+                    body: `Nume: ${values.lastName}\n Prenume: ${values.firstName}\n Email: ${values.email} \n Telefon: ${values.phone} \n Curs: ${coursePretty}\n Locatie: ${locationPretty}`
+                }
+                fetch('/api/contact', {
+                    method: 'POST',
+                    body: JSON.stringify(message)
+                })
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+                // setSubmitting(false)
             }}
         >
             {({ isSubmitting, values }) => (
@@ -71,8 +89,13 @@ const Formular = () => {
                     <div className="grid md:justify-center mb-12 md:mb-24 gap-6 md:gap-12">
 
                         <div>
-                            <Field className="input" placeholder="Nume si prenume" name="name" />
-                            <ErrorMessage className="text-red caption ml-5" name="name" component="div" />
+                            <Field className="input" placeholder="Nume" name="lastName" />
+                            <ErrorMessage className="text-red caption ml-5" name="lastName" component="div" />
+                        </div>
+
+                        <div>
+                            <Field className="input" placeholder="Prenume" name="firstName" />
+                            <ErrorMessage className="text-red caption ml-5" name="firstName" component="div" />
                         </div>
 
                         <div>
