@@ -11,9 +11,9 @@ import * as styles from './Slider.module.css'
 
 SwiperCore.use([Navigation]);
 
-const Slider = () => {
+const Slider = ({ imageName }) => {
     const { SLIDER_CURS } = Enums;
-    const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs=> curs.id === 1).list);
+    const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs => curs.id === 1).list);
 
     return (
         <>
