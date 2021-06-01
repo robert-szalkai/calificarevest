@@ -34,7 +34,7 @@ const Formular = ({ location }) => {
     }, [selectedCourse])
 
     useEffect(() => {
-        if(location.state.selected) {
+        if(location.state?.selected) {
             setInitialValues(prevState => ({
                 ...prevState,
                 course: location.state.selected
