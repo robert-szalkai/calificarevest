@@ -1,0 +1,16 @@
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    height: 500px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .image {
+        height: 350px;
+    }
+}

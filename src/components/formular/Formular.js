@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import * as Yup from 'yup';
+import { AppContext } from '../../context/app-context';
 import Enums from '../../enums/Enums';
 
 const validationSchema = Yup.object().shape({
@@ -12,21 +13,40 @@ const validationSchema = Yup.object().shape({
     location: Yup.string().required('Selecteaza o locatie')
 });
 
-const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    course: '',
-    location: ''
-}
-
-const Formular = () => {
+const Formular = ({ location }) => {
     const { ORASE, LISTA_CURSURI } = Enums;
+    const { selectedCourse } = useContext(AppContext);
+
+    const [initialValues, setInitialValues] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        course: selectedCourse,
+        location: ''
+    })
+
+    useEffect(() => {
+        setInitialValues(prevState => ({
+            ...prevState,
+            course: selectedCourse
+        }))
+    }, [selectedCourse])
+
+    useEffect(() => {
+        if(location.state.selected) {
+            setInitialValues(prevState => ({
+                ...prevState,
+                course: location.state.selected
+            }))
+        }
+    }, [location])
+
     return (
         <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
+            enableReinitialize={true}
             onSubmit={(values, { setSubmitting }) => {
                 let coursePretty = LISTA_CURSURI.find(curs => curs.id === +values.course).name;
                 let locationPretty = ORASE.find(oras => oras.cityId === +values.location).name;
@@ -36,21 +56,21 @@ const Formular = () => {
                     email: values.email,
                     body: `Nume: ${values.lastName}\n Prenume: ${values.firstName}\n Email: ${values.email} \n Telefon: ${values.phone} \n Curs: ${coursePretty}\n Locatie: ${locationPretty}`
                 }
-                fetch('/api/contact', {
-                    method: 'POST',
-                    body: JSON.stringify(message)
-                })
-                    .then(response => response.json())
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
+                // fetch('/api/contact', {
+                //     method: 'POST',
+                //     body: JSON.stringify(message)
+                // })
+                //     .then(response => response.json())
+                //     .then(response => {
+                //         console.log(response);
+                //     })
+                //     .catch(error => {
+                //         console.log(error);
+                //     })
                 // setSubmitting(false)
             }}
         >
-            {({ isSubmitting, values }) => (
+            {({ isSubmitting, values, setFieldValue }) => (
                 <Form className="grid">
                     <h3 className="uppercase text-blue-400 text-center mb-12 md:mb-24">Inscrie-te la un curs</h3>
 

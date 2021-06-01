@@ -51,8 +51,20 @@ const Cursuri = () => {
                             <div className={styles.slide}>
                                 <img className={styles.image} src={`/${item.image}`} alt="stivuitorist" />
                                 <p className={styles.title}>{item.name}</p>
-                                <Link className="btn btn-secondary btn-small mb-2" onClick={() => onClickHandler(item)} to={`/#formular`}>Inscrie-te</Link>
-                                <Link className="btn btn-primary btn-small" to={`/cursuri/${item.name}`}>Detalii</Link>
+                                <Link className="btn btn-secondary btn-small mb-2"
+                                    to={`/#formular`}
+                                    state={{
+                                        selected: item.id
+                                    }}
+                                >
+                                    Inscrie-te
+                                </Link>
+                                <Link className="btn btn-primary btn-small" 
+                                    to={`/cursuri/${item.url}`}
+                                    state={{curs: item}}
+                                >
+                                    Detalii
+                                </Link>
                             </div>
                         </SwiperSlide>
                     })

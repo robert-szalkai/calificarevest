@@ -14,7 +14,7 @@ import Cursuri from '../components/cursuri/Cursuri'
 import AppContextProvider from '../context/app-context'
 import Formular from '../components/formular/Formular'
 
-const Index = () => {
+const Index = ({location}) => {
     return (
         <AppContextProvider>
             <Layout showBackground={true}>
@@ -32,7 +32,7 @@ const Index = () => {
                 </section>
                 <section id="formular" className="main-layout full-width-layout bg-light-blue-custom">
                     <div className="center-layout py-20 md:py-40">
-                        <Formular />
+                        <Formular location={location}/>
                     </div>
                 </section>
             </Layout>

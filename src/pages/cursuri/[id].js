@@ -1,12 +1,40 @@
-import React from 'react'
+import { Link } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+import DetaliiCurs from '../../components/detaliiCurs/DetaliiCurs'
 import Layout from '../../components/layout/Layout'
+import Slider from '../../components/slider/Slider'
+import Enums from '../../enums/Enums'
 
-const Cursuri = ({ params }) => {
+const Cursuri = ({ params, location }) => {
+    const { LISTA_CURSURI } = Enums;
+
+    const [curs, setCurs] = useState(location.state?.curs || {});
+
+    useEffect(() => {
+        if (!location.state) {
+            let result = LISTA_CURSURI.find(curs => curs.url === params.id);
+            setCurs(result || {});
+        }
+    }, [])
     return (
         <Layout>
-            <section className="center-layout">
-                <h1>pagina de  {params.id}</h1>
+            {Object.keys(curs).length > 0 ? <>
+                <section className="center-layout mt-10 md:mt-14 xl:mt-20 xl:mt-32 mb-24 md:mb-32 overflow-hidden">
+                    <h1 className="h3 text-center uppercase text-blue-400 mb-10">Curs {curs.name}</h1>
+                    <Slider imageName={curs.short}/>
+                </section>
+
+                <section className="main-layout full-width-layout">
+                    <img className="row-start-1 row-end-2 col-start-1 col-end-4" src={'/hero-2.svg'} alt="wave" />
+                    <div className="center-layout row-start-1 row-end-2 py-20 md:py-40 z-10">
+                        <DetaliiCurs curs={curs} />
+                    </div>
+                </section>
+            </> : <section className="center-layout grid">
+                <p className="h3 text-center mt-20 mb-10">Cursul nu exista</p>
+                <Link className="btn btn-primary btn-big justify-self-center" to="/">Acasa</Link>
             </section>
+            }
         </Layout>
     )
 }
