@@ -71,7 +71,11 @@ const Formular = ({ location }) => {
             }}
         >
             {({ isSubmitting, values, setFieldValue }) => (
-                <Form className="grid">
+                <Form className="grid" data-netlify="true" netlify-honeypot="true" data-netlify-recaptcha="true">
+                    <div data-netlify-recaptcha={true}></div>
+                    <p className="hidden">
+                        <input name="bot-field" />
+                    </p>
                     <h3 className="uppercase text-blue-400 text-center mb-12 md:mb-24">Inscrie-te la un curs</h3>
 
                     <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16">
