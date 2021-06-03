@@ -49,7 +49,7 @@ const Cursuri = () => {
                     LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slideWrap}>
                             <div className={styles.slide}>
-                                <img className={styles.image} src={`/${item.image}`} alt="stivuitorist" />
+                                <img className={styles.image} src={`/cursuri/${item.short}/${item.image}`} alt="stivuitorist" />
                                 <p className={styles.title}>{item.name}</p>
                                 <Link className="btn btn-secondary btn-small mb-2"
                                     to={`/#formular`}

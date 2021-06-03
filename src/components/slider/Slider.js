@@ -13,7 +13,7 @@ SwiperCore.use([Navigation]);
 
 const Slider = ({ imageName }) => {
     const { SLIDER_CURS } = Enums;
-    const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs => curs.id === 1).list);
+    const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs => curs.name === imageName).list);
 
     return (
         <>
@@ -30,7 +30,7 @@ const Slider = ({ imageName }) => {
                 {
                     courseList.length > 0 && courseList.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slide}>
-                            <img className={styles.image} src={`/cursuri/stivuitorist/${item}`} alt="stivuitorist" />
+                            <img className={styles.image} src={`/cursuri/${imageName}/${item}`} alt={imageName} />
                         </SwiperSlide>
                     })
                 }

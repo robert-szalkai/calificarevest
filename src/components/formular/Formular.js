@@ -13,6 +13,12 @@ const validationSchema = Yup.object().shape({
     location: Yup.string().required('Selecteaza o locatie')
 });
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+}
+
 const Formular = ({ location }) => {
     const { ORASE, LISTA_CURSURI } = Enums;
     const { selectedCourse } = useContext(AppContext);
@@ -34,7 +40,7 @@ const Formular = ({ location }) => {
     }, [selectedCourse])
 
     useEffect(() => {
-        if(location.state?.selected) {
+        if (location.state?.selected) {
             setInitialValues(prevState => ({
                 ...prevState,
                 course: location.state.selected
@@ -54,6 +60,8 @@ const Formular = ({ location }) => {
                     firstName: values.firstName,
                     lastName: values.lastName,
                     email: values.email,
+                    course: coursePretty,
+                    location: locationPretty,
                     body: `Nume: ${values.lastName}\n Prenume: ${values.firstName}\n Email: ${values.email} \n Telefon: ${values.phone} \n Curs: ${coursePretty}\n Locatie: ${locationPretty}`
                 }
                 // fetch('/api/contact', {
@@ -71,7 +79,7 @@ const Formular = ({ location }) => {
             }}
         >
             {({ isSubmitting, values, setFieldValue }) => (
-                <Form className="grid" data-netlify="true" netlify-honeypot="true" data-netlify-recaptcha="true">
+                <Form className="grid" name="inscriere" data-netlify="true" netlify-honeypot="true" data-netlify-recaptcha="true">
                     <div data-netlify-recaptcha={true}></div>
                     <p className="hidden">
                         <input name="bot-field" />
