@@ -5,3 +5,11 @@
     border-radius: 40px;
     padding: 60px 80px;
 }
+
+@media (max-width: 767px) {
+    .box {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        padding: 32px;
+    }
+}
