@@ -10,6 +10,7 @@ const Autorizari = () => {
                 <img className={styles.image} src={'ministerul_muncii.png'} alt="ministerul-muncii" />
                 <img className={styles.image} src={'anc.jpeg'} alt="anc" />
                 <img className={styles.image} src={'ministerul_educatiei.jpeg'} alt="ministerul-educatiei" />
+                <img className={styles.image} src={'iscir.png'} alt="iscir" />
             </div>
         </>
     )

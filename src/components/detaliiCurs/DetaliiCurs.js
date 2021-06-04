@@ -1,15 +1,10 @@
 import { Link } from 'gatsby';
-import React, { useContext } from 'react'
-import { AppContext } from '../../context/app-context';
+import React from 'react'
 
 import * as styles from './DetaliiCurs.module.css'
 
 const DetaliiCurs = ({ curs }) => {
-    console.log(curs);
-    const { setSelectedCourse } = useContext(AppContext);
-    const onClickHandler = async (course) => {
-        setSelectedCourse(course.id);
-    }
+
     return (
         <div className="grid">
             <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Detalii curs</p>
@@ -53,7 +48,14 @@ const DetaliiCurs = ({ curs }) => {
                     <li className="p">Pregatirea si verificarea vehiculului pentru lucru;</li>
                 </ul>
             </div>
-            <Link className="btn btn-secondary justify-self-center btn-big mb-2" onClick={() => onClickHandler()} to={`/#formular`}>Inscrie-te</Link>
+            <Link className="btn btn-secondary justify-self-center btn-big mb-2"
+                to={`/#formular`}
+                state={{
+                    selected: curs.id
+                }}
+            >
+                Inscrie-te
+            </Link>
         </div>
     )
 }

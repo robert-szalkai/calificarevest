@@ -5,8 +5,8 @@ import * as styles from './Hero.module.css';
 const Hero = () => {
     return (
         <div className={styles.container}>
-            <div className="grid justify-center content-center">
-                <h2 className="mb-6 text-blue-400 text-center md:text-left">
+            <div className="grid md:justify-center content-center">
+                <h2 className="mb-6 text-blue-400">
                     Cursuri <br/> 
                     de calificare
                 </h2>
@@ -16,7 +16,7 @@ const Hero = () => {
                     inalta calitate
                 </p>
                 <p className="uppercase text-blue-300 mb-5"> Toate pe teritoriul Romaniei</p>
-                <a href="#cursuri" className="btn btn-primary btn-small justify-self-start">Vezi cursurile</a>
+                <a href="#cursuri" className="btn btn-primary btn-small md:justify-self-start">Vezi cursurile</a>
             </div>
             <div className={["grid", styles.imageWrapper].join(' ')}>
                 <div className={styles.imageShadow}></div>
