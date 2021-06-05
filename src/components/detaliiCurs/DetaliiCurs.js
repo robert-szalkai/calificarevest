@@ -7,46 +7,53 @@ const DetaliiCurs = ({ curs }) => {
 
     return (
         <div className="grid">
-            <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Detalii curs</p>
+            <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Informatii utile</p>
             <div className={[styles.box, "mb-10 md:mb-20"].join(' ')}>
+                <div>
+                    <h4 className="text-blue-400 mb-5">Detalii</h4>
+                    <ul className="list-disc list-inside">
+                        <li>
+                            <span className="mr-2 p opacity-50">Tipul cursului:</span>
+                            <span className="p semibold">{curs.type}</span>
+                        </li>
+                        <li>
+                            <span className="mr-2 p opacity-50">Cod NC:</span>
+                            <span className="p semibold">{curs.code}</span>
+                        </li>
+                        <li>
+                            <span className="mr-2 p opacity-50">Durata cursului:</span>
+                            <span className="p semibold">{curs.duration}</span>
+                        </li>
+                        <li>
+                            <span className="mr-2 p opacity-50">Conditii inscriere:</span>
+                            <span className="p semibold">{curs.conditions}</span>
+                        </li>
+                        <li>
+                            <span className="mr-2 p opacity-50">Tarif:</span>
+                            <span className="p semibold">{curs.price}</span>
+                        </li>
+                    </ul>
+                </div>
                 <div>
                     <h4 className="text-blue-400 mb-5">Acte necesare inscrierii</h4>
                     <ul className="list-disc list-inside">
-                        <li className="p">Copie BI</li>
-                        <li className="p">Copie certificat de nastere</li>
-                        <li className="p">Copie diploma de studii</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="text-blue-400 mb-5">Pretul si durata cursului</h4>
-                    <ul className="list-disc list-inside">
-                        <li className="p">Pret: 1400lei</li>
-                        <li className="p">Se poate achita in rate</li>
-                        <li className="p">Cursul dureaza 15 saptamani.</li>
-                        <li className="p">Programul se incheie cu examen de tip grila si proba practica.</li>
+                        {curs.documents.map((item, index) => {
+                            return <li key={index} className="p">{item}</li>
+                        })}
                     </ul>
                 </div>
             </div>
-            <div className="mb-10 md:mb-20">
+            <div className="mb-4">
                 <h4 className="text-blue-400 mb-3">Descriere:</h4>
-                <p>
-                    Maşinistul la maşini pentru terasamente este conducătorul
-                    de maşini şi utilaje pentru terasamente, care conduce,
-                    întreţine şi supraveghează instalaţii, agregate şi utilaje
-                    destinate executării lucrărilor de terasamente conform cărţii
-                    tehnice a acestora. Cursul este autorizat ANC, certificatele
-                    eliberate in urma absolvirii avand recunoastere nationala si
-                    la nivelul UE.
-                </p>
+                {curs.description.map((item, index) => {
+                    return <p className="mb-4" key={index}>{item}</p>
+                })}
             </div>
             <div className="mb-10 md:mb-20">
-                <h4 className="text-blue-400 mb-3">Tematica abordata:</h4>
-                <ul className="list-disc list-inside">
-                    <li className="p">Perfectionarea pregatirii profesionale;</li>
-                    <li className="p">Respectarea normelor de PM, PSI si a Prescriptiilor tehnice ISCIR;</li>
-                    <li className="p">Completarea documentelor;</li>
-                    <li className="p">Pregatirea si verificarea vehiculului pentru lucru;</li>
-                </ul>
+                <h4 className="text-blue-400 mb-3">Absolvire:</h4>
+                {curs.notes.map((item, index) => {
+                    return <p key={index}>{item}</p>
+                })}
             </div>
             <Link className="btn btn-secondary justify-self-center btn-big mb-2"
                 to={`/#formular`}

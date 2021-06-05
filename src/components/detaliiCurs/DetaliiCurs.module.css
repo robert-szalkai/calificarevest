@@ -1,6 +1,7 @@
 .box {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
     background: var(--white);
     border-radius: 40px;
     padding: 60px 80px;

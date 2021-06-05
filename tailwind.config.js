@@ -8,7 +8,8 @@ module.exports = {
         white: 'var(--white)',
         black: 'var(--black)',
         gray: {
-          100: 'var(--gray-100)'
+          100: 'var(--gray-100)',
+          200: 'var(--gray-200)'
         },
         blue: {
           100: 'var(--blue-100)',

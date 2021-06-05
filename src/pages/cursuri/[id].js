@@ -19,7 +19,7 @@ const Cursuri = ({ params, location }) => {
     return (
         <Layout>
             {Object.keys(curs).length > 0 ? <>
-                <section className="center-layout mt-10 md:mt-14 xl:mt-20 xl:mt-32 mb-24 md:mb-32 overflow-hidden">
+                <section className="center-layout mt-10 md:mt-14 xl:mt-18 mb-5 overflow-hidden">
                     <h1 className="h3 text-center uppercase text-blue-400 mb-10">Curs {curs.name}</h1>
                     <Slider imageName={curs.short}/>
                 </section>
@@ -31,7 +31,7 @@ const Cursuri = ({ params, location }) => {
                     </div>
                 </section>
             </> : <section className="center-layout grid">
-                <p className="h3 text-center mt-20 mb-10">Cursul nu exista</p>
+                <p className="h3 text-center mt-10 mb-10">Cursul nu exista</p>
                 <Link className="btn btn-primary btn-big justify-self-center" to="/">Acasa</Link>
             </section>
             }
