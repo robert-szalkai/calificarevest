@@ -25,7 +25,7 @@ const Cursuri = ({ params, location }) => {
                 </section>
 
                 <section className="main-layout full-width-layout">
-                    <img className="row-start-1 row-end-2 col-start-1 col-end-4 w-full" src={'/hero-2.svg'} alt="wave" />
+                    <img className="row-start-1 row-end-2 col-start-1 col-end-4 w-full h-full object-cover" src={'/hero-2.svg'} alt="wave" />
                     <div className="center-layout row-start-1 row-end-2 py-20 md:py-40 z-10">
                         <DetaliiCurs curs={curs} />
                     </div>

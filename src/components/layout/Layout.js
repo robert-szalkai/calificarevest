@@ -3,7 +3,10 @@ import Navbar from '../navbar/Navbar'
 import Helmet from 'react-helmet';
 import useSiteMetadata from '../../hooks/use-sitemetadata';
 
+import CookieConsent from "react-cookie-consent";
+
 import * as styles from './Layout.module.css';
+import { Link } from 'gatsby';
 
 const Layout = ({ children, showBackground }) => {
     const { title, description } = useSiteMetadata();
@@ -19,6 +22,17 @@ const Layout = ({ children, showBackground }) => {
                 <main className="full-width-layout">{children}</main>
                 {showBackground && <img className={styles.backgroundImage} src={'/fundalx1400.svg'} alt="fundal" />}
             </div>
+            <CookieConsent
+                location="bottom"
+                buttonText="Accept"
+                cookieName="myAwesomeCookieName2"
+                style={{ background: "var(--blue-400)" }}
+                className="text-blue-200"
+                buttonStyle={{ color: "var(--black)", fontSize: "14px" }}
+                expires={150}
+            >
+                Folosim cookie-uri. Prin continuarea navigării pe Website-ul nostru confirmi acceptarea utilizării fişierelor de tip cookie conform Politicii de Cookie. 
+            </CookieConsent>
         </>
     )
 }
