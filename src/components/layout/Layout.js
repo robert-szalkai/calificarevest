@@ -7,6 +7,7 @@ import CookieConsent from "react-cookie-consent";
 
 import * as styles from './Layout.module.css';
 import { Link } from 'gatsby';
+import Footer from '../footer/Footer';
 
 const Layout = ({ children, showBackground }) => {
     const { title, description } = useSiteMetadata();
@@ -21,6 +22,7 @@ const Layout = ({ children, showBackground }) => {
                 <Navbar />
                 <main className="full-width-layout">{children}</main>
                 {showBackground && <img className={styles.backgroundImage} src={'/fundalx1400.svg'} alt="fundal" />}
+                <Footer />
             </div>
             <CookieConsent
                 location="bottom"
@@ -31,7 +33,9 @@ const Layout = ({ children, showBackground }) => {
                 buttonStyle={{ color: "var(--black)", fontSize: "14px" }}
                 expires={150}
             >
-                Folosim cookie-uri. Prin continuarea navigării pe Website-ul nostru confirmi acceptarea utilizării fişierelor de tip cookie conform Politicii de Cookie. 
+                Folosim cookie-uri. Prin continuarea navigării pe Website-ul nostru 
+                confirmi acceptarea utilizării fişierelor de tip cookie conform Politicii de Cookie.
+                <Link className="hover:underline text-yellow-200 ml-2" to="/cookies">Detalii -&gt; </Link>
             </CookieConsent>
         </>
     )

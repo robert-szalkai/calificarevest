@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <header className="full-width-layout py-5">
             <nav className="center-layout flex justify-between">
-                <a className="h3 text-blue-400" href="/">Calificari Vest</a>
+                <Link className="h3 text-blue-400" to="/">Calificari Vest</Link>
                 <div className={`flex items-center gap-x-20 ${styles.desktopLinks}`}>
                     <Link className={styles.link} activeClassName={styles.active} to="/">Acasa</Link>
                     <Link className={styles.link} activeClassName={styles.active} to="/cursuri">Cursuri</Link>

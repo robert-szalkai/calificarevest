@@ -23,6 +23,8 @@ const Formular = ({ location }) => {
     const { ORASE, LISTA_CURSURI } = Enums;
     const { selectedCourse } = useContext(AppContext);
 
+    const [courseDetails, setCourseDetails] = useState({});
+
     const [initialValues, setInitialValues] = useState({
         firstName: '',
         lastName: '',
@@ -47,6 +49,18 @@ const Formular = ({ location }) => {
             }))
         }
     }, [location])
+
+    const onChangeCourse = (evt, setFieldValue) => {
+        setFieldValue("course", evt.target.value);
+        let curs = LISTA_CURSURI.find(curs => curs.id === +evt.target.value);
+        setCourseDetails({
+            type: curs.type,
+            code: curs.code,
+            duration: curs.duration,
+            conditions: curs.conditions,
+            price: curs.price
+        })
+    }
 
     return (
         <Formik
@@ -89,7 +103,7 @@ const Formular = ({ location }) => {
                     <div className="grid xl:flex md:justify-center xl:justify-around gap-10 xl:gap-0 mb-16">
                         <div>
 
-                            <Field className="select" as="select" name="course">
+                            <Field className="select" as="select" name="course" onChange={(evt) => onChangeCourse(evt, setFieldValue)}>
                                 <option value="" disabled hidden>Alege cursul</option>
                                 {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
                                     return <option key={item.id} value={item.id}>{item.name}</option>
@@ -112,9 +126,26 @@ const Formular = ({ location }) => {
 
                     {values.course &&
                         <div className="bg-white p-8 md:p-16 mb-12 md:mb-24">
-                            <p className="mb-5">Tipul : Specializare</p>
-                            <p className="mb-10">Durata cursului: 6 saptamani</p>
-                            <p className="text-blue-400">Pretul cursului este de 950 lei si se poate plati in 3 rate</p>
+                            <div className="flex mb-3">
+                                <span className="mr-2 p opacity-50">Tipul cursului:</span>
+                                <span className="p semibold">{courseDetails.type}</span>
+                            </div>
+                            <div className="flex mb-3">
+                                <span className="mr-2 p opacity-50">Cod NC:</span>
+                                <span className="p semibold">{courseDetails.code}</span>
+                            </div>
+                            <div className="flex mb-3">
+                                <span className="mr-2 p opacity-50">Durata cursului:</span>
+                                <span className="p semibold">{courseDetails.duration}</span>
+                            </div>
+                            <div className="flex mb-3">
+                                <span className="mr-2 p opacity-50">Conditii inscriere:</span>
+                                <span className="p semibold">{courseDetails.conditions}</span>
+                            </div>
+                            <div className="flex">
+                                <span className="mr-2 p opacity-50">Tarif:</span>
+                                <span className="p semibold">{courseDetails.price}</span>
+                            </div>
                         </div>
                     }
 

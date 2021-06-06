@@ -10,7 +10,7 @@ const index = () => {
                         <h2 className="text-yellow-100 uppercase mb-16">Ia legatura cu noi</h2>
 
                         <div className="grid">
-                            <h3 className="text-blue-300 normal-weight mb-2">Print center</h3>
+                            <h3 className="text-blue-300 normal-weight mb-2">SC Print Center SRL</h3>
                             <p>300265 TIMIŞOARA</p>
                             <p className="mb-7">Str. Pomiculturii, Nr. 10</p>
                         </div>

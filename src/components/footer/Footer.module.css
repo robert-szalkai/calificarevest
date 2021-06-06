@@ -1,0 +1,11 @@
+.footer-container {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 120px;
+}
+
+@media (max-width: 767px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
