@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import * as Yup from 'yup';
 import { AppContext } from '../../context/app-context';
 import Enums from '../../enums/Enums';
+import { Link } from 'gatsby';
 
 const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Campul este obligatoriu'),
@@ -58,7 +59,8 @@ const Formular = ({ location }) => {
             code: curs.code,
             duration: curs.duration,
             conditions: curs.conditions,
-            price: curs.price
+            price: curs.price,
+            url: curs.url
         })
     }
 
@@ -125,7 +127,7 @@ const Formular = ({ location }) => {
                     </div>
 
                     {values.course &&
-                        <div className="bg-white p-8 md:p-16 mb-12 md:mb-24">
+                        <div className=" grid bg-white p-8 md:p-16 mb-12 md:mb-24">
                             <div className="flex mb-3">
                                 <span className="mr-2 p opacity-50">Tipul cursului:</span>
                                 <span className="p semibold">{courseDetails.type}</span>
@@ -142,41 +144,46 @@ const Formular = ({ location }) => {
                                 <span className="mr-2 p opacity-50">Conditii inscriere:</span>
                                 <span className="p semibold">{courseDetails.conditions}</span>
                             </div>
-                            <div className="flex">
+                            <div className="flex mb-6">
                                 <span className="mr-2 p opacity-50">Tarif:</span>
                                 <span className="p semibold">{courseDetails.price}</span>
                             </div>
+                            <Link className="btn btn-secondary btn-small justify-self-center"
+                                to={`/cursuri/${courseDetails.url}`}
+                            >
+                                Mai multe detalii
+                            </Link>
                         </div>
                     }
 
-                    <div className="grid md:justify-center mb-12 md:mb-24 gap-6 md:gap-12">
+                            <div className="grid md:justify-center mb-12 md:mb-24 gap-6 md:gap-12">
 
-                        <div>
-                            <Field className="input" placeholder="Nume" name="lastName" />
-                            <ErrorMessage className="text-red caption ml-5" name="lastName" component="div" />
-                        </div>
+                                <div>
+                                    <Field className="input" placeholder="Nume" name="lastName" />
+                                    <ErrorMessage className="text-red caption ml-5" name="lastName" component="div" />
+                                </div>
 
-                        <div>
-                            <Field className="input" placeholder="Prenume" name="firstName" />
-                            <ErrorMessage className="text-red caption ml-5" name="firstName" component="div" />
-                        </div>
+                                <div>
+                                    <Field className="input" placeholder="Prenume" name="firstName" />
+                                    <ErrorMessage className="text-red caption ml-5" name="firstName" component="div" />
+                                </div>
 
-                        <div>
-                            <Field className="input" placeholder="Adresa de email" type="email" name="email" />
-                            <ErrorMessage className="text-red caption ml-5" name="email" component="div" />
-                        </div>
+                                <div>
+                                    <Field className="input" placeholder="Adresa de email" type="email" name="email" />
+                                    <ErrorMessage className="text-red caption ml-5" name="email" component="div" />
+                                </div>
 
-                        <div>
-                            <Field className="input" placeholder="Numar de telefon" name="phone" />
-                            <ErrorMessage className="text-red caption ml-5" name="phone" component="div" />
-                        </div>
-                    </div>
+                                <div>
+                                    <Field className="input" placeholder="Numar de telefon" name="phone" />
+                                    <ErrorMessage className="text-red caption ml-5" name="phone" component="div" />
+                                </div>
+                            </div>
 
-                    <button className="btn btn-primary btn-big md:justify-self-center" type="submit" disabled={isSubmitting}>Inscrie-te</button>
+                            <button className="btn btn-primary btn-big md:justify-self-center" type="submit" disabled={isSubmitting}>Inscrie-te</button>
                 </Form>
             )}
         </Formik>
-    )
-}
+            )
+            }
 
-export default Formular
+            export default Formular

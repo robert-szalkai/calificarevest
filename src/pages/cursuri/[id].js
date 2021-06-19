@@ -11,7 +11,7 @@ const Cursuri = ({ params, location }) => {
     const [curs, setCurs] = useState(location.state?.curs || {});
 
     useEffect(() => {
-        if (!location.state) {
+        if ((location.state && !location.state.curs) || !location.state) {
             let result = LISTA_CURSURI.find(curs => curs.url === params.id);
             setCurs(result || {});
         }
