@@ -131,7 +131,30 @@ let Enums = {
         short: 'masinist',
         name: "Masinist la masini pentru terasamente",
         image: "masinist-1.jpeg",
-        date: "2 iunie"
+        date: "2 iunie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere;",
+            "copie diploma de studii;",
+            "adeverinta medicala cu mentiunea apt munca"
+        ],
+        type: "calificare",
+        code: "7245.2.6",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.100 lei",
+        description: [
+            "Electricianul Exploatare Medie şi Joasa Tensiune efectueaza lucrari de explotare, intretinere, revizie si reparatie (limitat de competente si impreuna cu echipele de mentenanta) la instalatiile electrice si echipamentele tehnologice conectate la medie şi joasa tensiune cat si verificarea starii tehnice a utilajelor si mijloacelor de securitate, a dispozitivelor de lucru.",
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei, insotit de suplimentul descriptiv care atesta competentele dobandite",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+
+
+
     },
     {
         id: 4,
@@ -139,55 +162,184 @@ let Enums = {
         short: 'sudor',
         name: "Sudor electric",
         image: "sudor-1.jpeg",
-        date: "10 iunie"
-    },
-        // {
-        //     id: 5,
-        //     url: 'curs-electrician-medie-si-joasa-tensiune',
-        //     short: 'electrician',
-        //     name: "Electrician medie si joasa tensiune",
-        //     image: "sudor.jpeg",
-        //     date: "23 august"
-        // },
-        // {
-        //     id: 6,
-        //     url: "curs-lacatus-mecanic-intretinere-si-reparatii-universale",
-        //     short: "lacatus",
-        //     name: "Lacatus mecanic intretinere si reparatii universale",
-        //     image: "stivuitorist.jpeg",
-        //     date: "20 septembrie"
-        // },
-        // {
-        //     id: 7,
-        //     url: 'curs-instalator-instalatii-tehnico-sanitare-si-gaze',
-        //     short: 'instalator',
-        //     name: "Instalator instalatii tehnico-sanitare si gaze",
-        //     image: "masinist.jpeg",
-        //     date: "1 noiembrie"
-        // },
-        // {
-        //     id: 8,
-        //     url: 'curs-zidar-pietrar-tencuitor',
-        //     short: 'zidar',
-        //     name: "Zidar, pietrar, tencuitor",
-        //     image: "sudor.jpeg",
-        //     date: "1 noiembrie"
-        // },
-        // {
-        //     id: 10,
-        //     name: "Ospatar, chelner, vanzator in unitati de alimentatie",
-        //     image: "masinist.jpeg",
-        //     date: "1 noiembrie"
-        // },
-        // {
-        //     id: 12,
-        //     url: 'curs-dulgher',
-        //     short: 'dulgher',
-        //     name: 'Dulgher, Tamplar, Parchetar',
-        //     imae: 'dulgher-1.jpeg'
-        // }
+        date: "10 iunie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7212.1.1",
+        duration: "10 saptamani",
+        condition: "minim invatamant gimnazial absovit",
+        price: "1.000 lei",
+        description: [
+            "Sudorul realizeaza lucrari de imbinari nedemontabile prin diverse procedee de sudura pentru obtinerea unei game variate de produse, folosind utilajele şi echipamentele specifice tehnologiei de sudare indicate in documentatia tehnologica."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
 
-    ],
+    },
+    {
+        id: 5,
+        url: 'curs-electrician-medie-si-joasa-tensiune',
+        short: 'electrician',
+        name: "Electrician medie si joasa tensiune",
+        image: "electrician-1.jpg",
+        date: "23 august",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7245.2.6",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.100 lei",
+        description: [
+            "Electricianul Exploatare Medie şi Joasa Tensiune efectueaza lucrari de explotare, intretinere, revizie si reparatie (limitat de competente si impreuna cu echipele de mentenanta) la instalatiile electrice si echipamentele tehnologice conectate la medie şi joasa tensiune cat si verificarea starii tehnice a utilajelor si mijloacelor de securitate si a dispozitivelor de lucru."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+
+    },
+    {
+        id: 6,
+        url: "curs-lacatus-mecanic-intretinere-si-reparatii-universale",
+        short: "lacatus",
+        name: "Lacatus mecanic intretinere si reparatii universale",
+        image: "lacatus-1.jpg",
+        date: "20 septembrie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7214.2.3",
+        duration: "18 saptamani",
+        conditions: "minim invatamant gimnazial absolvit",
+        price: "1.000 lei",
+        description: [
+            "Lacatusul mecanic de intretinere si reparatii isi desfasoara activitatea in ateliere specializate in reparatii de masini unelte, utilaje sau instalatii industriale sau in locul in care masinile unelte, utilajele sau instalatiile industriale lucreaza in mod normal si necesita reparatii sau revizii pe loc, ca urmare a defectarii lor, executa lucrari de intretinere curenta si inlaturarea tuturor dereglarilor si defectiunilor aparute in timpul functionarii, controleaza periodic exploatarea corecta a masinilor si utilajelor in scopul prevenirii eventualelor avarieri accidentale si executa reparatii curente sau capitale, cunoaste tehnologia reparatiilor la masini unelte, instalatii sau utilaje, cunoaşte modul de funcţionare al acestora, lanţul cinematic la maşini unelte sau utilaje precum si schemele si desenele ce ilustreaza interdependenta ansamblurilor si subansamblurilor care compun masina unealta, utilajul sau instalatia.",
+            "Pe baza acestora va diagnostica si remedia defectiunile intervenite la masinile unelte  , utilajele sau instalatiile defecte, va executa probele de functionare dupa efectuarea reparatiilor si repunerea in parametrii tehnici din documentatia masinii."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+    },
+    {
+        id: 7,
+        url: 'curs-instalator-instalatii-tehnico-sanitare-si-gaze',
+        short: 'instalator',
+        name: "Instalator instalatii tehnico-sanitare si gaze",
+        image: "instalator-1.jpg",
+        date: "1 noiembrie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7136.2.2",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.000 lei",
+        description: [
+            "Instalatorul tehnico-sanitar si gaze trebuie sa stie sa masoare, sa taie, sa pozeze si sa imbine conducte, sa realizeze treceri prin ziduri si plansee pentru conducte, sa monteze conducte, utilaje, aparate de utilizare, accesorii, sa puna in functiune instalatii, sa inlocuiasca, sa repare conductele, imbinarile si garniturile acestora, sa diagnosticheze si sa remedieze defectiunile constatate la toate tipurile de instalatii si utilaje/aparate de utilizare folosite pentru alimentarea cu apa, canalizare, ridicare a presiunii apei, stingere incendii, gaze naturale si sa efectueze lucrari de intretinere a acestora."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+    },
+    {
+        id: 8,
+        url: 'curs-zidar-pietrar-tencuitor',
+        short: 'zidar',
+        name: "Zidar, pietrar, tencuitor",
+        image: "zidar-1.jpg",
+        date: "1 noiembrie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7122.2.1",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.000 lei",
+        description: [
+            "Zidarul, pietrar, tencuitor executa elemente de constructii din zidarii de complexitati diferite folosind pietre naturale sau artificiale confectionate din materiale arse sau nearse sub forma de monolit sau de blocuri, prin asezarea lor in randuri orizontale si imbinarea lor dupa anumite reguli, folosind un liant (mortar) pentru legarea acestora, verifica si corecteaza defectele de executie, aprovizioneaza locul de munca cu materiale, scule, unelte, dispozitive si utilaje necesare, pregateste sculele, dispozitivele si utilajele pentru lucru, prepara mortarele pentru zidarii si tencuieli.",
+            " Zidarul, pietrar, tencuitor executa de obicei constructii si elemente de constructii noi dar poseda si competentele necesare pentru a interveni la constructiile vechi, fie pentru demolarea lor in cazul cand nu se mai pot folosi fara risc, fie pentru reabilitarea, modernizarea si aducerea lor la o stare de functionare buna, prin lucrari de reparatii la zidarii si tencuieli, este capabil să evalueze calitatea şi eficienţa lucrării din punct de vedere tehnic şi economic."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+    },
+    {
+        id: 10,
+        name: "Ospatar, chelner, vanzator in unitati de alimentatie",
+        short: 'ospatar',
+        image: "ospatar-1.jpg",
+        date: "1 noiembrie",
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "5123.2.1",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.000 lei",
+        description: [
+            "Chelnerul asigura servirea consumatorilor cu produsele alimentare solicitate, in locatii de alimentatie publica. Serveste la cererea consumatorilor preparate culinare, bauturi si alte produse comestibile.Serviciul propriu-zis consta in primirea clientilor si stabilirea relatiei cu acestia (salutul, pronuntarea numelui clientului, daca este cazul informarea lor sugestiva, verbala si prin lista)",
+            "In activitatea sa, chelnerul foloseste diverse materiale auxiliare: servet, blocnotes, creion, chibrit, carnet de plati, moneda divizionara, liste de preparate si bauturi, borderou de plati si bonuri de marcaj. Pentru serviciul propriu-zis sunt necesare: tacamuri, vesela, pahare, sticle, sifoane, platouri, clesti, masute pentru transportul preparatelor, masa de serviciu, mese pentru consumatori, scaune, flori, servetele etc."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+    },
+    {
+        id: 12,
+        name: "dulgher,tamplar, parchetar",
+        image: "dulgher-1.jpeg",
+        short: 'dulgher',
+        documents: [
+            "copie B.I./C.I.;",
+            "copie certificat de nastere",
+            "copie diploma de studii",
+            "adeverinta medicala cu mentiunea apt de munca"
+        ],
+        type: "calificare",
+        code: "7124.2.1",
+        duration: "18 saptamani",
+        condition: "minim invatamant gimnazial absolvit",
+        price: "1.000 lei",
+        description: [
+            "Dulgherul – tamplar – parchetar este muncitorul din constructii – montaj a carui activitate se compune din: executarea schelelor necesare lucrului la inaltime pentru lucrarile de zidarie si finisaje la interior si exterior, executarea cofrajelor pentru diferitele elemente de rezistenta ale constructiilor (fundatii, stalpi, grinzi, planse, scari, pereti) din beton armat monolit, montarea elementelor prefabricate care alcatuiesc structura de rezistenta a cladirilor etajate, montarea pardoselilor din lemn (dusumele din scandura, parchet de diferite esente fag, stejar, foi de parchet laminat), executarea acoperisului tip sarpanta, incadrarea si ajustarea tamplariei."
+        ],
+        notes: [
+            "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
+            "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
+        ]
+    }],
     SLIDER_CURS: [
         {
             name: "stivuitorist",
@@ -212,8 +364,32 @@ let Enums = {
         {
             name: 'stagiu-stivuitorist',
             list: ['stagiu-stivuitorist-1.jpg']
+        },
+        {
+            name: 'electrician',
+            list: ['electrician-1.jpg']
+        },
+        {
+            name: 'instalator',
+            list: ['instalator-1.jpg']
+        },
+        {
+            name: 'lacatus',
+            list: ['lacatus-1.jpg']
+        },
+        {
+            name: 'ospatar',
+            list: ['ospatar-1.jpg']
+        },
+        {
+            name: 'dulgher',
+            list: ['dulgher-1.jpg']
+        },
+        {
+            name: 'zidar',
+            list: ['zidar-1.jpg']
         }
-    ]
+    ],
 }
 
 export default Enums;
