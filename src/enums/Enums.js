@@ -111,14 +111,11 @@ let Enums = {
         code: "8332.2.2",
         duration: "18 saptamani",
         condition: "minim invatamant gimnazial absolvit",
-        price: "375 lei,tariful include si taxa ISCIR",
+        price: "375 lei, tariful include si taxa ISCIR",
         description: [
-            "Masinistul la masini pentru terasamente este conducatorul de masini si utilaje pentru terasamente, care conduce, intretine si supravegheaza instalatii, agregate si utilaje destinate executarii lucrarilor de terasamente conform cartii tehnice a acestora.",
-            "Masinile pentru terasamente sunt utilizate cu preponderenta la lucrarile de pamant si in constructia de drumuri executand operatii de: incarcat; sapat si transportat; sapat santuri si canale; profilat/nivelat; scarificat; defrisat/curatat terenul; compactat etc.",
-            "Utilajele pentru executarea terasamentelor se pot clasifica astfel: ",
-            "- utilaje şi echipamente pentru sapat si incarcat: excavatoare cu o cupa, excavatoare cu lingura dreapta, excavatoare cu lingura inversa, excavatoare cu draglina, excavatoare cu graifer, excavatoare cu soneta; incarcatoare frontale; ",
-            "- utilaje pentru afanat, imprastiat si nivelat terenul: buldozere, scarificatoare, screpere, gredere; ",
-            "- utilaje pentru compactat: compactoare la care compactarea se realizeaza prin rulare, compactoare la care compactarea se realizeaza prin vibrare, compactoare la care compactarea se realizeaza prin batere, compactoare la care compactarea se realizeaza mixt; "
+            "Stagiul de instruire se organizeaza in conformitate cu Prescripția Tehnica ISCIR CR8/ 2009.",
+            "Posesorii autorizatiilor ISCIR pentru ocupatia de stivuitorist au obligatia ca odata la 4 ani sa faca un stagiu de instruire, cu o durata de 8 ore, in vederea obtinerii unui talon nou.",
+            "Aceste stagii trebuie efectuate atat de catre stivuitoristii care deservesc stivuitoare autopropulsate, cat si de cei care deservesc translatoare stivuitoare.",
         ],
         notes: [
             "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
@@ -152,9 +149,6 @@ let Enums = {
             "Dupa absolvirea cursului se elibereaza un certificat de calificare recunoscut de Ministerul Muncii si Ministerul Educatiei Nationale, insotit de suplimentul descriptiv care atesta competentele dobandite.",
             "Certificatul de calificare are recunoastere internationala daca este tradus si apostilat."
         ]
-
-
-
     },
     {
         id: 4,
