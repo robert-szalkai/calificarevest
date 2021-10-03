@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/szroby29/calificarevest#readme",
   "dependencies": {
+    "airtable": "^0.11.1",
     "dotenv": "^8.2.0",
     "formik": "^2.2.8",
     "gatsby": "^3.3.0",

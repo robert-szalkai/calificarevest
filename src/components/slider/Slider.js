@@ -11,7 +11,7 @@ import * as styles from './Slider.module.css'
 
 SwiperCore.use([Navigation]);
 
-const Slider = ({ imageName }) => {
+const Slider = ({ imageName, images }) => {
     const { SLIDER_CURS } = Enums;
     const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs => curs.name === imageName).list);
 
@@ -28,9 +28,9 @@ const Slider = ({ imageName }) => {
                 }}
             >
                 {
-                    courseList.length > 0 && courseList.map((item, index) => {
+                    images.length > 0 && images.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slide}>
-                            <img className={styles.image} src={`/cursuri/${imageName}/${item}`} alt={imageName} />
+                            <img className={styles.image} src={item.url} alt={imageName} />
                         </SwiperSlide>
                     })
                 }

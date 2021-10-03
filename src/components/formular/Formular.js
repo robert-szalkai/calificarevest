@@ -20,7 +20,7 @@ const encode = (data) => {
         .join("&")
 }
 
-const Formular = ({ location }) => {
+const Formular = ({ location, cursuri }) => {
     const { ORASE, LISTA_CURSURI } = Enums;
     const { selectedCourse } = useContext(AppContext);
 
@@ -53,14 +53,14 @@ const Formular = ({ location }) => {
 
     const onChangeCourse = (evt, setFieldValue) => {
         setFieldValue("course", evt.target.value);
-        let curs = LISTA_CURSURI.find(curs => curs.id === +evt.target.value);
+        let curs = cursuri.find(curs => curs.id === evt.target.value);
         setCourseDetails({
             type: curs.type,
             code: curs.code,
             duration: curs.duration,
-            conditions: curs.conditions,
+            conditions: curs.condition,
             price: curs.price,
-            url: curs.url
+            url: curs.short
         })
     }
 
@@ -70,7 +70,7 @@ const Formular = ({ location }) => {
             validationSchema={validationSchema}
             enableReinitialize={true}
             onSubmit={(values, { setSubmitting }) => {
-                let coursePretty = LISTA_CURSURI.find(curs => curs.id === +values.course).name;
+                let coursePretty = cursuri.find(curs => curs.id === +values.course).name;
                 let locationPretty = ORASE.find(oras => oras.cityId === +values.location).name;
                 let message = {
                     firstName: values.firstName,
@@ -107,7 +107,7 @@ const Formular = ({ location }) => {
 
                             <Field className="select" as="select" name="course" onChange={(evt) => onChangeCourse(evt, setFieldValue)}>
                                 <option value="" disabled hidden>Alege cursul</option>
-                                {LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
+                                {cursuri.length > 0 && cursuri.map((item, index) => {
                                     return <option key={item.id} value={item.id}>{item.name}</option>
                                 })}
                             </Field>
@@ -149,7 +149,7 @@ const Formular = ({ location }) => {
                                 <span className="p semibold">{courseDetails.price}</span>
                             </div>
                             <Link className="btn btn-secondary btn-small justify-self-center"
-                                to={`/cursuri/${courseDetails.url}`}
+                                to={`/cursuri/curs-${courseDetails.url}`}
                             >
                                 Mai multe detalii
                             </Link>

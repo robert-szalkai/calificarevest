@@ -1,24 +1,17 @@
 import { Link } from 'gatsby';
-import React, { useContext } from 'react'
+import React from 'react'
 
 import SwiperCore, { Navigation } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper-bundle.min.css';
-import { AppContext } from '../../context/app-context';
-import Enums from '../../enums/Enums';
 import * as styles from './Cursuri.module.css'
 
 SwiperCore.use([Navigation]);
 
-const Cursuri = () => {
-    const { LISTA_CURSURI } = Enums;
-    const { setSelectedCourse } = useContext(AppContext);
+const Cursuri = ({ cursuri }) => {
 
-    const onClickHandler = async (course) => {
-        setSelectedCourse(course.id);
-    }
     return (
         <>
             <p className="h3 text-center uppercase text-blue-400 mb-10 md:mb-20">Cursurile noastre</p>
@@ -46,10 +39,10 @@ const Cursuri = () => {
                 }}
             >
                 {
-                    LISTA_CURSURI.length > 0 && LISTA_CURSURI.map((item, index) => {
+                    cursuri.length > 0 && cursuri.map((item, index) => {
                         return <SwiperSlide key={index} className={styles.slideWrap}>
                             <div className={styles.slide}>
-                                <img className={styles.image} src={`/cursuri/${item.short}/${item.image}`} alt="stivuitorist" />
+                                <img className={styles.image} src={item.images[0].url} alt="stivuitorist" />
                                 <p className={styles.title}>{item.name}</p>
                                 <Link className="btn btn-secondary btn-small mb-2"
                                     to={`/#formular`}
@@ -59,9 +52,9 @@ const Cursuri = () => {
                                 >
                                     Inscrie-te
                                 </Link>
-                                <Link className="btn btn-primary btn-small" 
-                                    to={`/cursuri/${item.url}`}
-                                    state={{curs: item}}
+                                <Link className="btn btn-primary btn-small"
+                                    to={`/cursuri/curs-${item.short}`}
+                                    state={{ curs: item }}
                                 >
                                     Detalii
                                 </Link>

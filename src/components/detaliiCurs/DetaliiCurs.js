@@ -37,23 +37,22 @@ const DetaliiCurs = ({ curs }) => {
                 <div>
                     <h4 className="text-blue-400 mb-5">Acte necesare inscrierii</h4>
                     <ul className="list-disc list-inside">
-                        {curs.documents.map((item, index) => {
-                            return <li key={index} className="p">{item}</li>
+                        {curs.documents.split('\n').map((item, index) => {
+                            if(item !== "") {
+                                return <li key={index} className="p">{item}</li>;
+                            }
                         })}
+
                     </ul>
                 </div>
             </div>
             <div className="mb-4">
                 <h4 className="text-blue-400 mb-3">Descriere:</h4>
-                {curs.description.map((item, index) => {
-                    return <p className="mb-4" key={index}>{item}</p>
-                })}
+                <p className="mb-4 whitespace-pre-line">{curs.description}</p>
             </div>
             <div className="mb-10 md:mb-20">
                 <h4 className="text-blue-400 mb-3">Absolvire:</h4>
-                {curs.notes.map((item, index) => {
-                    return <p key={index}>{item}</p>
-                })}
+                <p className="whitespace-pre-line">{curs.notes}</p>
             </div>
             <Link className="btn btn-secondary justify-self-center btn-big mb-2"
                 to={`/#formular`}

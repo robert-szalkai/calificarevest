@@ -4,24 +4,33 @@ import DetaliiCurs from '../../components/detaliiCurs/DetaliiCurs'
 import Layout from '../../components/layout/Layout'
 import Slider from '../../components/slider/Slider'
 import Enums from '../../enums/Enums'
+import useAirtable from '../../hooks/useAirtable'
 
 const Cursuri = ({ params, location }) => {
     const { LISTA_CURSURI } = Enums;
 
     const [curs, setCurs] = useState(location.state?.curs || {});
 
+    const [isDisabled, setIsDisabled] = useState(true);
+    let cursuriTemp = useAirtable(isDisabled);
     useEffect(() => {
         if ((location.state && !location.state.curs) || !location.state) {
-            let result = LISTA_CURSURI.find(curs => curs.url === params.id);
-            setCurs(result || {});
+            setIsDisabled(false);
         }
     }, [])
+
+    useEffect(() => {
+        if(cursuriTemp && cursuriTemp.length > 0) {
+            let result = cursuriTemp.find(curs => `curs-${curs.short}` === params.id);
+            setCurs(result || {});
+        }
+    }, [cursuriTemp])
     return (
         <Layout>
             {Object.keys(curs).length > 0 ? <>
                 <section className="center-layout mt-10 md:mt-14 xl:mt-18 mb-5 overflow-hidden">
                     <h1 className="h3 text-center uppercase text-blue-400 mb-10">Curs {curs.name}</h1>
-                    <Slider imageName={curs.short}/>
+                    <Slider imageName={curs.short} images={curs.images} />
                 </section>
 
                 <section className="main-layout full-width-layout">

@@ -13,8 +13,12 @@ import Performanta from '../components/performanta/Performanta'
 import Cursuri from '../components/cursuri/Cursuri'
 import AppContextProvider from '../context/app-context'
 import Formular from '../components/formular/Formular'
+import useAirtable from '../hooks/useAirtable'
 
 const Index = ({location}) => {
+
+    let cursuri = useAirtable();
+
     return (
         <AppContextProvider>
             <Layout showBackground={true}>
@@ -22,7 +26,7 @@ const Index = ({location}) => {
                     <Hero />
                 </section>
                 <section id="cursuri" className="center-layout mb-24 md:mb-32 overflow-hidden">
-                    <Cursuri />
+                    <Cursuri cursuri={cursuri} />
                 </section>
                 <section className="center-layout mb-24 md:mb-32">
                     <Performanta />
@@ -32,7 +36,7 @@ const Index = ({location}) => {
                 </section>
                 <section id="formular" className="main-layout full-width-layout bg-light-blue-custom">
                     <div className="center-layout py-20 md:py-40">
-                        <Formular location={location}/>
+                        <Formular cursuri={cursuri} location={location}/>
                     </div>
                 </section>
             </Layout>
