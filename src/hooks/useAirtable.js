@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 var Airtable = require('airtable');
 Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
-    // apiKey: 'keyZ1VYaUy7YU9dR3'
-    apiKey: process.env.AIRTABLE_API_KEY
+    apiKey: 'keyZ1VYaUy7YU9dR3'
+    // apiKey: process.env.AIRTABLE_API_KEY
 });
 var base = Airtable.base('appYlXCqc6Y5QOkQG');
 
