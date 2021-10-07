@@ -1,19 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import SwiperCore, { Navigation } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper-bundle.min.css';
-import Enums from '../../enums/Enums';
 import * as styles from './Slider.module.css'
 
 
 SwiperCore.use([Navigation]);
 
 const Slider = ({ imageName, images }) => {
-    const { SLIDER_CURS } = Enums;
-    const [courseList, setCourseList] = useState(SLIDER_CURS.find(curs => curs.name === imageName).list);
 
     return (
         <>

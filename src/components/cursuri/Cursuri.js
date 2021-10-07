@@ -40,6 +40,9 @@ const Cursuri = ({ cursuri }) => {
             >
                 {
                     cursuri?.length > 0 && cursuri?.map((item, index) => {
+                        if(!item.images) {
+                            return null;
+                        }
                         return <SwiperSlide key={index} className={styles.slideWrap}>
                             <div className={styles.slide}>
                                 <img className={styles.image} src={item.images[0].url} alt="stivuitorist" />
