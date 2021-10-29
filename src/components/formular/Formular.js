@@ -53,7 +53,7 @@ const Formular = ({ location, cursuri }) => {
 
     const onChangeCourse = (evt, setFieldValue) => {
         setFieldValue("course", evt.target.value);
-        let curs = cursuri.find(curs => curs.id === evt.target.value);
+        let curs = cursuri.find(curs => curs.id === +evt.target.value);
         setCourseDetails({
             type: curs.type,
             code: curs.code,
